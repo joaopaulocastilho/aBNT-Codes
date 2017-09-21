@@ -1,22 +1,22 @@
 #include<stdio.h>
-#include<stdlib.h>
+#include<algorithm>
+using namespace std;
 
-#define MAX 112
-
-int cmp(const void *a, const void *b) { return *(int*)b - *(int*)a; }
+#define MAX 31
+#define MAXV 1123456
+#define INF 1123456789
 
 int main(void) {
-  int inst, n, m, resp, i, bloco[MAX];
-  scanf("%d", &inst);
-  while (inst--) {
+  int t, n, m, ice[MAX], memo[MAXV], i, j;
+  scanf("%d\n", &t);
+  while (t--) {
     scanf("%d %d", &n, &m);
-    for (i = 0; i < n; i++) scanf("%d", &bloco[i]);
-    qsort(bloco, n, sizeof(int), &cmp);
-    //for (i = 0; i < n; i++) printf("%d ", bloco[i]);
-    for (resp = i = 0; m; i++) {
-      while (bloco[i] <= m) { m -= bloco[i]; resp++; }
-    }
-    printf("%d\n", resp);
+    for (i = 0; i < n; i++) scanf("%d", &ice[i]);
+    for (memo[0] = 0, i = 1; i <= m; i++) memo[i] = INF;
+    for (i = 0; i < n; i++)
+      for (j = ice[i]; j <= m; j++)
+        memo[j] = min(memo[j], memo[j - ice[i]] + 1);
+    printf("%d\n", memo[m]);
   }
   return 0;
 }
