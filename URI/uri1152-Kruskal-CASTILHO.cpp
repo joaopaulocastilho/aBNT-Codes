@@ -7,7 +7,6 @@ using namespace std;
 #define MAX 212345
 
 typedef pair<int, int>ii;
-typedef long long ll;
 
 int n, pai[MAX], ra[MAX];
 
@@ -24,8 +23,8 @@ void Union(int i, int j) {
       if (ra[x] == ra[y]) ra[y]++;
     }}}
 
-ll kruskal(vector < pair<int, ii> >&LA) {
-  int i; ll ret = 0;
+int kruskal(vector < pair<int, ii> >&LA) {
+  int i, ret = 0;
   for (i = 0; i < (int)LA.size(); i++) {
     pair <int, ii> front = LA[i];
     if (!isSameSet(front.second.first, front.second.second)) {
@@ -36,8 +35,7 @@ ll kruskal(vector < pair<int, ii> >&LA) {
 }
 
 int main(void) {
-  int m, u, v, w, i;
-  ll soma, menor;
+  int m, u, v, w, i, soma, menor;
   while (scanf("%d %d", &n, &m), n) {
     vector < pair<int, ii> >LA;
     soma = 0;
@@ -47,8 +45,8 @@ int main(void) {
     }
     for (i = 0; i < (int)LA.size(); i++) Make(i);
     sort(LA.begin(), LA.end());
-    menor = (n > 1) ? kruskal(LA) : 0;
-    printf("%lld\n", soma - menor);
+    menor = kruskal(LA);
+    printf("%d\n", soma - menor);
   }
   return 0;
 }
