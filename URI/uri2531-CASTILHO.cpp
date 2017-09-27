@@ -12,7 +12,7 @@ seg_t st[4 * MAX];
 
 void build(int p, int l, int r) {
   int p1, p2;
-  if(l == r) { st[p].maior = st[p].menor = l; return; }
+  if (l == r) { st[p].maior = st[p].menor = l; return; }
   build(left(p), l, (l+r)/2);
   build(right(p), (l+r)/2 + 1, r);
   p1 = st[left(p)].menor; p2 = st[right(p)].menor;
@@ -21,19 +21,17 @@ void build(int p, int l, int r) {
   st[p].maior = a[p1] >= a[p2] ? p1 : p2;
 }
 
-int rmq(int p, int l, int r, int i, int j, int control) {
-  int p1, p2;
-  if(i > r || j < l) return -1;
-  if(l >= i && r <= j) {
-    if (control) return st[p].maior;
-    return st[p].menor;
-  }
-  p1 = rmq(left(p), l, (l+r)/2, i, j, control);
-  p2 = rmq(right(p), (l+r)/2 + 1, r, i, j, control);
-  if(p1 == -1) return p2;
-  if(p2 == -1) return p1;
-  if (control) return (a[p1] >= a[p2]) ? p1 : p2;
-  return (a[p1] <= a[p2]) ? p1 : p2;
+seg_t rmq(int p, int l, int r, int i, int j) {
+  seg_t p1, p2, ret;
+  if (i > r || j < l) { ret.menor = -1; return ret; }
+  if (l >= i && r <= j) return st[p];
+  p1 = rmq(left(p), l, (l+r)/2, i, j);
+  p2 = rmq(right(p), (l+r)/2 + 1, r, i, j);
+  if (p1.menor == -1) return p2;
+  if (p2.menor == -1) return p1;
+  ret.maior = (a[p1.maior] >= a[p2.maior]) ? p1.maior : p2.maior;
+  ret.menor = (a[p1.menor] <= a[p2.menor]) ? p1.menor : p2.menor;
+  return ret;
 }
 
 void update(int p, int l, int r, int i) {
@@ -49,7 +47,8 @@ void update(int p, int l, int r, int i) {
 }
 
 int main(void) {
-  int i, q, op, j, r1, r2;
+  int i, q, op, j;
+  seg_t r;
   while (scanf("%d", &n) != EOF) {
     for (i = 0; i < n; i++) scanf("%d", &a[i]);
     build(1, 0, n - 1);
@@ -59,9 +58,8 @@ int main(void) {
       if (op == 1) { a[i] = j; update(1, 0, n - 1, i); }
       else {
         j--;
-        r1 = a[rmq(1, 0, n - 1, i, j, 1)];
-        r2 = a[rmq(1, 0, n - 1, i, j, 0)];
-        printf("%d\n", abs(r1 - r2));
+        r = rmq(1, 0, n - 1, i, j);
+        printf("%d\n", abs(a[r.maior] - a[r.menor]));
       }}}
   return 0;
 }
