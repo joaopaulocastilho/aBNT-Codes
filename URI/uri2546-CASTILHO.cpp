@@ -7,38 +7,27 @@ using namespace std;
 #define left(p) (p) << 1
 #define right(p) ((p) << 1) + 1
 
-int n, a[MAX], st[4 * MAX], lazy[4 * MAX];
+typedef struct { int valor, id; }mesada_t;
+
+int n, me[MAX], lazy[4 * MAX];
+mesada_t st[4 * MAX];
 
 void build(int p, int l, int r) {
-  if(l == r) { st[p] = a[l]; return; }
-  build(left(p), l, (l+r)/2);
-  build(right(p), (l+r)/2 + 1, r);
-  st[p] = max(st[left(p)], st[right(p)]);
+  int meio = (l + r) / 2;
+  mesada_t p1, p2;
+  if (l == r) { st[p].valor = me[l]; st[p].id = l; return; }
+  build(left(p), l, meio);
+  build(right(p), meio + 1, r);
+  p1 = st[left(p)]; p2 = st[right(p)];
+  st[p].valor = max(p1.valor, p2.valor);
+  st[p].id = (p1.valor >= p2.valor) ? p1.id : p2.id;
 }
 
-int rmq(int p, int l, int r, int i, int j) {
-  int p1, p2;
-  if(i > r || j < l) return -1;
+void range_update(int p, int l, int r, int i, int j, int val) {
+  int meio = (l + r) / 2;
+  mesada_t p1, p2;
   if (lazy[p]) {
-    st[p] += lazy[p];
-    if (l != r) {
-      lazy[left(p)] += lazy[p];
-      lazy[right(p)] += lazy[p];
-    }
-    lazy[p] = 0;
-  }
-  if(l >= i && r <= j) return st[p];
-  p1 = rmq(left(p), l, (l+r)/2, i, j);
-  p2 = rmq(right(p), (l+r)/2 + 1, r, i, j);
-  if(p1 == -1) return p2;
-  if(p2 == -1) return p1;
-  return max(p1, p2);
-}
-
-void updateRange(int p, int l, int r, int i, int j, int val) {
-  int meio;
-  if (lazy[p]) {
-    st[p] += lazy[p];
+    st[p].valor += lazy[p];
     if (l != r) {
       lazy[left(p)] += lazy[p];
       lazy[right(p)] += lazy[p];
@@ -46,37 +35,57 @@ void updateRange(int p, int l, int r, int i, int j, int val) {
     lazy[p] = 0;
   }
   if (i > r || j < l) return;
-  if (i <= l  && j >= r) {
-    st[p] += val;
+  if (i <= l && j >= r) {
+    st[p].valor += val;
     if (l != r) {
       lazy[left(p)] += val;
       lazy[right(p)] += val;
     }
     return;
   }
-  meio = (l + r) / 2;
-  updateRange(left(p), l, meio, i, j, val);
-  updateRange(right(p), meio + 1, r, i, j, val);
-  st[p] = max(st[left(p)], st[right(p)]);
+  range_update(left(p), l, meio, i, j, val);
+  range_update(right(p), meio + 1, r, i, j, val);
+  p1 = st[left(p)]; p2 = st[right(p)];
+  st[p].valor = max(p1.valor, p2.valor);
+  st[p].id = (p1.valor >= p2.valor) ? p1.id : p2.id;
+}
+
+mesada_t rmq(int p, int l, int r, int i, int j) {
+  int meio = (l + r) / 2;
+  mesada_t ret, p1, p2;
+  if (i > r || j < l) { ret.id = -1; return ret; }
+  if (lazy[p]) {
+    st[p].valor += lazy[p];
+    if (l != r) {
+      lazy[left(p)] += lazy[p];
+      lazy[right(p)] += lazy[p];
+    }
+    lazy[p] = 0;
+  }
+  if (l >= i && r <= j) return st[p];
+  p1 = rmq(left(p), l, meio, i, j);
+  p2 = rmq(right(p), meio + 1, r, i, j);
+  if (p1.id == -1) return p2;
+  if (p2.id == -1) return p1;
+  if (p1.valor >= p2.valor) return p1;
+  return p2;
 }
 
 int main(void) {
-  int q, i, nv, j;
-  char c;
+  int q, i, j, v; char c;
+  mesada_t resp;
   while (scanf("%d %d", &n, &q) != EOF) {
-    for (i = 0; i < n; i++) scanf("%d", &a[i]);
+    for (i = 0; i < n; i++) scanf("%d", &me[i]);
     memset(lazy, 0, sizeof(lazy)); build(1, 0, n - 1);
     while (q--) {
       scanf(" %c", &c);
-      switch (c) {
-      case 'A':
-        scanf("%d %d %d", &i, &j, &nv); i--; j--;
-        updateRange(1, 0, n - 1, i, j, nv);
-        break;
-      case 'C':
+      if (c == 'C') {
         scanf("%d %d", &i, &j); i--; j--;
-        printf("%d\n", rmq(1, 0, n - 1, i, j));
-        break;
+        resp = rmq(1, 0, n - 1, i, j);
+        printf("%d\n", resp.id + 1);
+      } else {
+        scanf("%d %d %d", &i, &j, &v); i--; j--;
+        range_update(1, 0, n - 1, i, j, v);
       }}}
   return 0;
 }
