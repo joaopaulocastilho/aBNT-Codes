@@ -1,0 +1,22 @@
+#include <cstdio>
+
+#define MAX 1123456
+
+int main(void){
+  int n, b, h, w, cost, bed, menor = INF;
+  while(scanf("%d %d %d %d", &n, &b, &h, &w) != EOF){
+    for(int i = 0; i < h; i++){
+      scanf("%d", &cost);
+      for(int j = 0; j < w; j++){
+	scanf("%d", &bed);
+	if(bed >= n){
+	  if(cost * n < menor && cost * n < b) menor = (cost * n);
+	  break;
+	}
+      }
+    }
+    if(menor == INF) printf("stay home\n");
+    else printf("%d\n", menor);
+  }
+  return 0;
+}

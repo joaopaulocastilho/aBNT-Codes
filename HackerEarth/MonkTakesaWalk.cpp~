@@ -1,0 +1,8 @@
+#include <cstdio>
+
+int main(void){
+  char string[MAX];
+
+
+  return 0;
+}

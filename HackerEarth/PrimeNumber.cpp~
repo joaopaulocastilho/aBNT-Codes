@@ -1,0 +1,26 @@
+#include <cstdio>
+
+vector<int> PI;
+int pi;
+
+void crivo(int n) {
+  int i, j, primo, raiz;
+  PI[0] = 2; pi = 1;
+  for (i = 3; i <= n; i++) {
+    primo = 1; raiz = sqrt(i);
+    for (j = 0; primo && j < pi && PI[j] <= raiz; j++)
+      if (i % PI[j] == 0) primo = 0;
+    if (primo) PI[pi++] = i;
+  }
+}
+
+int main(void){
+  int a;
+  scanf("%d", &a);
+  crivo(a);
+  for(i = 0; i < PI.size(); i++){
+    if(i != (PI.size() - 1)) printf(" ");
+    printf("%d", PI[i]);
+  }  
+  return 0;
+}

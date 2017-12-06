@@ -1,0 +1,18 @@
+#include <cstdio>
+
+int main(void){
+
+  scanf("%d\n", &n);
+  getchar();
+  for(int i = 1; i <= n; i++){
+    scanf("%d", &s);
+    if(s > maior) maior = s;
+    while(getchar() != '\n'){
+      scanf("%d", &s);
+      if(s > maior) maior = s; 
+    }
+    printf("Case %d: %d\n", i, maior);
+  }
+
+  return 0;
+}

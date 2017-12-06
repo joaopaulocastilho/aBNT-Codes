@@ -1,0 +1,25 @@
+#include <cstdio>
+
+int main(void){
+
+  while(scanf("%d %d %d %d", &n, &d, &t, &pos), n >= 0)
+    value = t;
+    memset(tax, 0, sizeof(tax));
+    while(pos--){
+      scanf("%d", &month, &down);
+      tax[month] = down;
+    }
+    i = 0;
+    cur = 0;
+    value = value - (value * tax[cur]);
+    t -= d;
+    i++;
+    while(value > t){
+      if(tax[i] != 0) cur = tax[i];
+      value = value - (value * tax[cur]);
+      t -= d;
+      i++;
+    }
+    printf("%d month%c", i, i > 1 ? 's' : '');
+  return 0;
+}

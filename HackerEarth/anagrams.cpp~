@@ -1,0 +1,14 @@
+#include <cstdio>
+
+int main(void){
+  int check1[MAX], check2[MAX];
+
+  memset(check1, 0, sizeof(check1));
+  memset(check2, 0, sizeof(check2));
+  while((c = getchar()) != '\n') check1[c]++;
+  while((c = getchar()) != '\n') check2[c]++;
+  for(int i = 0, i < MAX; i++)
+    count+= abs(check1[i] - check2[i]);
+  printf("%d\n", count);
+  return 0;
+}
