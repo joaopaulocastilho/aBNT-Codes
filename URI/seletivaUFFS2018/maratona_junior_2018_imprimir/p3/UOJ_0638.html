@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>URI C - L de Atreus!?</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="author" content="URI Online Judge; www.urionlinejudge.edu.br" />
+		<meta name="description" content="URI Online Judge - Problema C - L de Atreus!?" />
+
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="https://urionlinejudge.r.worldssl.net/repository/contest.css" />
+
+	</head>
+	<body>
+		<div class="header">
+			<span>URI Online Judge | C</span>
+			<h1>L de Atreus!?</h1>
+			<div>
+				<p>Por Gabriel Batista Galli, UFFS <img src='https://urionlinejudge.r.worldssl.net/gallery/images/flags/br.gif' alt='BR' /> Brazil</p>
+			</div>
+			<strong>Timelimit: 3</strong>
+		</div>
+
+		<div class="problem">
+
+			<div class="description">
+				<p>No recentemente lançado e muito aclamado jogo God of War, Kratos está agora no mundo da mitologia Nórdica tentando esquecer seu passado. Lá ele conheceu Faye, uma mulher tão misteriosa quanto ele próprio, com quem teve um filho: Atreus. Mas com a chegada de um estranho, Kratos e seu filho embarcam em uma jornada de consequências inesperadas.</p>
+
+<p>Ao longo de sua viagem, eles encontram vários escritos em paredes, painéis, pedras... Esses escritos contam interessantes histórias sobre o mundo nórdico e suas personalidades, mas também aconselham os viajantes desavisados. Infelizmente, Kratos não consegue lê-los, já que ele é de Esparta e não se interessou em aprender as várias línguas de seu novo lar. Então Atreus precisa traduzir toda mensagem escrita que eles encontram. E Atreus é muito bom em linguística, impressionando até Mimir, o homem mais sábio de todos!</p>
+
+<p>Entretanto, não é incomum que eles encontrem mensagens com runas (letras nórdicas) faltando ou danificadas, impossibilitando que Atreus saiba o que elas estão tentando dizer. Então você, sendo um jogador esperto e entusiasmado, foi escolhido para ajudá-los. Sua tarefa é corrigir esses erros para que Atreus possa ler os dizeres e então eles estarão melhor preparados para os perigos dessa jornada.</p>
+
+<p>Mas como alguém faria isso? Bem, Mimir sugere o seguinte: a Edda em verso e a Edda em prosa, dois trabalhos literários islandeses medievais compostos em sua maioria por poemas, são as duas principais fontes de conhecimento sobre a mitologia nórdica<sup>*</sup>. Sendo assim, procure nestas coletâneas de poemas as palavras que sejam mais similares às que o Atreus não consegue ler e use-as para corrigir os dizeres. Uma palavra <strong>p<sub>1</sub></strong> é considerada mais similar a <strong>p<sub>2</sub></strong> do que a <strong>p<sub>3</sub></strong> se há menos inserções, deleções e substituições de letras a fazer para transformar <strong>p<sub>1</sub></strong> em <strong>p<sub>2</sub></strong> do que <strong>p<sub>1</sub></strong> em <strong>p<sub>3</sub></strong>.</p>
+			</div>
+			<h2>Entrada</h2>
+
+			<div class="input">
+				<p>A entrada é composta por múltiplas linhas. A primeira contém um inteiro <strong>q</strong> (1 ≤ <strong>q</strong> ≤ 10<sup>3</sup>) representando a quantia de palavras não-repetidas que você encontrou em um Edda. Cada uma das próximas <strong>q</strong> linhas contém uma dessas palavras. A próxima linha contém outro inteiro, <strong>c</strong> (1 ≤ <strong>c</strong> ≤ 10<sup>2</sup>), que indica o comprimento em palavras do escrito que você precisa corrigir. A última linha é o próprio escrito. Cada palavra dele é separada por um único espaço.</p>
+
+<p>Todas as palavras da entrada são compostas apenas por caracteres ASCII e têm comprimento ≤ 10<sup>2</sup>. Não há diacríticos, nem pontuação.</p>
+			</div>
+
+			<h2>Saída</h2>
+
+			<div class="output">
+				<p>A saída é uma única linha contendo a mensagem corrigida para Atreus ler. Ela segue as mesmas regras que a entrada e precisa terminar com uma quebra de linha ('\n'). Além disso, no caso de um empate entre duas palavras, escolha a que aparece primeiro dentre as da entrada.</p>
+			</div>
+
+			<div class="both"></div>
+
+			<table>
+				<thead>
+					<tr>
+						<td>Exemplos de Entrada</td>
+						<td>Exemplos de Saída</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="division">
+							<p>7<br />
+Tyr<br />
+Baldur<br />
+Freya<br />
+Loki<br />
+Mimir<br />
+Odin<br />
+Thor<br />
+1<br />
+Thyr</p>
+
+						</td>
+						<td>
+							<p>Tyr</p>
+
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		<div class="both"></div>
+
+    <table>
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="division">
+                    <p>13<br />
+aware<br />
+beware<br />
+Freya<br />
+God<br />
+if<br />
+Jormungandr<br />
+Kratos<br />
+Loki<br />
+Mimir<br />
+Odin<br />
+of<br />
+War<br />
+war<br />
+4<br />
+Frwus bAWARE of Odnn</p>
+
+                </td>
+                <td>
+                    <p>Freya beware of Odin</p>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="both"></div>
+
+    <table>
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="division">
+                    <p>9<br />
+Midgard<br />
+Niflheim<br />
+Muspelheim<br />
+Helheim<br />
+Jotunheim<br />
+Alfheim<br />
+Vanaheim<br />
+Svartalfheim<br />
+Asgard<br />
+1<br />
+Midgelheim</p>
+
+                </td>
+                <td>
+                    <p>Muspelheim</p>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+			<p class="footer">
+				* fonte: https://pt.wikipedia.org/wiki/Edda
+			</p>
+		</div>
+	</body>
+</html>

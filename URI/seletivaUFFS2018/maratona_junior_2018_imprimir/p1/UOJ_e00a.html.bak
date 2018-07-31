@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>URI A - Eearliest Deadline First</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="author" content="URI Online Judge; www.urionlinejudge.edu.br" />
+		<meta name="description" content="URI Online Judge - Problema A - Eearliest Deadline First" />
+
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="https://urionlinejudge.r.worldssl.net/repository/contest.css" />
+		<script type="text/javascript" src="https://urionlinejudge.r.worldssl.net/judge/js/math-jax/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+	</head>
+	<body>
+		<div class="header">
+			<span>URI Online Judge | A</span>
+			<h1>Eearliest Deadline First</h1>
+			<div>
+				<p>Por Emilio Wuerges, UFFS <img src='https://urionlinejudge.r.worldssl.net/gallery/images/flags/br.gif' alt='BR' /> Brazil</p>
+			</div>
+			<strong>Timelimit: 1</strong>
+		</div>
+
+		<div class="problem">
+
+			<div class="description">
+				<p>Neste problema o seu trabalho é verificar se um conjunto de processos periódicos que possuem restrição de tempo-real pode ser escalonado.</p>
+
+<p>Um processo de tempo real é caracterizado por dois números. O primeiro é o custo computacional do processo. Ou seja, o tempo que o processo gasta quando entrar em execução. O segundo número é o período em que o processo executa. Ou seja, a cada período de tempo, o processo reinicia.</p>
+
+<p>O conjunto será escalonado usando o algoritmo EDF (Earliest Deadline First). Sabe-se que o algoritmo EDF é ótimo. Ou seja, se um conjunto de tarefas não poder ser escalonado pelo EDF, ele não podera ser escalonado por nenhum outro algoritmo.</p>
+
+<p>O sistema operacional que receberá estas tarefas está rodando em uma máquina single core. As tarefas são preemptáveis. Isto é uma tarefa pode tomar o lugar de outra durante a execução, se for necessário.</p>
+
+<p>Considere que o custo de trocar entre tarefas é 0.</p>
+			</div>
+			<h2>Entrada</h2>
+
+			<div class="input">
+				<p>A primeira linha da entrada possiu um valor <span class="math-tex">\(1 \leq N \leq 10\), que é número de processos a ser avaliado.</p>
+
+<p>Cada <strong>N</strong> linha seguinte representa um processo, e contém 2 valores <span class="math-tex">\(1 \leq C \leq 5\) e <span class="math-tex">\(C \leq P \leq 100\), que representam o custo computacional e o período de cada processo, respectivamente.</p>
+			</div>
+
+			<h2>Saída</h2>
+
+			<div class="output">
+				<p>A saída consiste de uma única linha, contendo ou o string <strong>OK</strong> ou do string <strong>FAIL</strong>, caso o escalonamento seja possível ou não, respectivamente.</p>
+			</div>
+
+			<div class="both"></div>
+
+			<table>
+				<thead>
+					<tr>
+						<td>Exemplos de Entrada</td>
+						<td>Exemplos de Saída</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="division">
+							<p>2<br />
+3 5<br />
+2 5</p>
+
+						</td>
+						<td>
+							<p>OK</p>
+
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		<div class="both"></div>
+
+    <table>
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="division">
+                    <p>4<br />
+1 5<br />
+4 9<br />
+5 15<br />
+2 45</p>
+
+                </td>
+                <td>
+                    <p>FAIL</p>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="both"></div>
+
+    <table>
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="division">
+                    <p>ewrwsffdes</p>
+
+                </td>
+                <td>
+                    <p>de:1</p>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+			<p class="footer">
+				
+			</p>
+		</div>
+	</body>
+</html>

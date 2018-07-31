@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>URI 3097 - L as in Atreus!?</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="author" content="URI Online Judge; www.urionlinejudge.edu.br" />
+		<meta name="description" content="URI Online Judge - Problem 3097 - L as in Atreus!?" />
+
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="https://urionlinejudge.r.worldssl.net/repository/contest.css" />
+
+	</head>
+	<body>
+		<div class="header">
+			<span>URI Online Judge | 3097</span>
+			<h1>L as in Atreus!?</h1>
+			<div>
+				<p>By Gabriel Batista Galli, UFFS <img src='https://urionlinejudge.r.worldssl.net/gallery/images/flags/br.gif' alt='BR' /> Brazil</p>
+			</div>
+			<strong>Timelimit: 3</strong>
+		</div>
+
+		<div class="problem">
+
+			<div class="description">
+				<p>In the recently launched and highly acclaimed God of War game, Kratos is now in the realm of Norse mythology trying to leave the past behind. There he met Faye, a woman as mysterious as himself, with whom he had a child: Atreus. But upon the arrival of a stranger, Kratos and his son embark on a journey with unexpected consequences.</p>
+
+<p>Throughout their path, they find many writings on walls, panels, rocks... These writings tell interesting stories about the Norse world and their personalities, but can also advise an unsuspecting traveller. Sadly, Kratos cannot read them, for he is from Sparta and has not bothered learning the various languages of his new home. So Atreus must translate every written message they come across. And Atreus is very knowledgeable about Linguistics, impressing even Mimir, the wisest man alive!</p>
+
+<p>It is not uncommon, though, that they find messages with missing or damaged runes (Norse letters), making it impossible for Atreus to know what they are trying to say. So you, as a clever and enthusiastic player, were chosen to help them out. Your task is to fix those errors so Atreus can read the sayings and both of them will be better prepared for the dangers of this journey.</p>
+
+<p>But how can one accomplish that? Well, Mimir suggests the following: the Poetic Edda and the Prose Edda, two Medieval Icelandic literary works composed mostly of poems, are the two main sources of knowledge about the Norse mythology<sup>*</sup>. As such, find the words in these collections of poems that are most similar to those Atreus cannot read and use them to correct the sayings. A word <strong>w<sub>1</sub></strong> is considered more similar to <strong>w<sub>2</sub></strong> than to <strong>w<sub>3</sub></strong> if there are fewer letter insertions, deletions and substitutions to do in order to get from <strong>w<sub>1</sub></strong> to <strong>w<sub>2</sub></strong> than from <strong>w<sub>1</sub></strong> to <strong>w<sub>3</sub></strong>.</p>
+			</div>
+			<h2>Input</h2>
+
+			<div class="input">
+				<p>The input is composed of multiple lines. The first one contains an integer <strong>a</strong> (1 ≤ <strong>a</strong> ≤ 10<sup>3</sup>) representing the amount of unique words you have found in an Edda. Then, each of the following <strong>a</strong> lines contain one such word. The next line contains another integer, <strong>l</strong> (1 ≤ <strong>l</strong> ≤ 10<sup>2</sup>), which is the length in words of the writing you must fix. And the last line is the writing itself. Every word in it is separated by a single space.</p>
+
+<p>All words in the input are ASCII-only and have a length ≤ 10<sup>2</sup>. There are no diacritics or punctuations.</p>
+			</div>
+
+			<h2>Output</h2>
+
+			<div class="output">
+				<p>The output is a single line containing the corrected message for Atreus to read. It follows the same rules as the input and must end with a line feed ('\n'). Additionally, in the case of a tie between two words, choose the one that first appears among those in the input.</p>
+			</div>
+
+			<div class="both"></div>
+
+			<table>
+				<thead>
+					<tr>
+						<td>Input Samples</td>
+						<td>Output Samples</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="division">
+							<p>7<br />
+Tyr<br />
+Baldur<br />
+Freya<br />
+Loki<br />
+Mimir<br />
+Odin<br />
+Thor<br />
+1<br />
+Thyr</p>
+
+						</td>
+						<td>
+							<p>Tyr</p>
+
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		<div class="both"></div>
+
+    <table>
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="division">
+                    <p>13<br />
+aware<br />
+beware<br />
+Freya<br />
+God<br />
+if<br />
+Jormungandr<br />
+Kratos<br />
+Loki<br />
+Mimir<br />
+Odin<br />
+of<br />
+War<br />
+war<br />
+4<br />
+Frwus bAWARE of Odnn</p>
+
+                </td>
+                <td>
+                    <p>Freya beware of Odin</p>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="both"></div>
+
+    <table>
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="division">
+                    <p>9<br />
+Midgard<br />
+Niflheim<br />
+Muspelheim<br />
+Helheim<br />
+Jotunheim<br />
+Alfheim<br />
+Vanaheim<br />
+Svartalfheim<br />
+Asgard<br />
+1<br />
+Midgelheim</p>
+
+                </td>
+                <td>
+                    <p>Muspelheim</p>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+			<p class="footer">
+				* source: https://en.wikipedia.org/wiki/Edda
+			</p>
+		</div>
+	</body>
+</html>

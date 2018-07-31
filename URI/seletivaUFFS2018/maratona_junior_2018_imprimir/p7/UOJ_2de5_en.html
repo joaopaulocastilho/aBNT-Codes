@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>URI E - Uppercase, Why?</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="author" content="URI Online Judge; www.urionlinejudge.edu.br" />
+		<meta name="description" content="URI Online Judge - Problem E - Uppercase, Why?" />
+
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="https://urionlinejudge.r.worldssl.net/repository/contest.css" />
+		<script type="text/javascript" src="https://urionlinejudge.r.worldssl.net/judge/js/math-jax/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+	</head>
+	<body>
+		<div class="header">
+			<span>URI Online Judge | E</span>
+			<h1>Uppercase, Why?</h1>
+			<div>
+				<p>By Emilio Wuerges, UFFS <img src='https://urionlinejudge.r.worldssl.net/gallery/images/flags/br.gif' alt='BR' /> Brazil</p>
+			</div>
+			<strong>Timelimit: 1</strong>
+		</div>
+
+		<div class="problem">
+
+			<div class="description">
+				<p>The lexicon problem taught us how to sort 2 words. However, when the list of words was being built, the intern in charge made the mistake of including Uppercase characters!</p>
+
+<p>Now we have a huge list of words, with both lowercase, from <strong>a</strong> to <strong>z</strong>, and uppercase characters, from <strong>A</strong> to <strong>Z</strong>!</p>
+
+<p>We need to sort them, obeying the same order as before, regardless if the character is lowercase or uppercase.</p>
+<p>However, the uppercase characters will be used to break ties, once all letters have been compared. In this case we consider that the uppercase character comes first.</p>
+			</div>
+			<h2>Input</h2>
+
+			<div class="input">
+				<p>The first line contains an integer <span class="math-tex">\(1 \leq N \leq 5 \times 10^4\).</p>
+
+<p>Each of the following <strong>N</strong> lines contain a single word. Every word has at most 20 characters.</p>
+			</div>
+
+			<h2>Output</h2>
+
+			<div class="output">
+				<p>The output must contain the list of words, sorted.</p>
+			</div>
+
+			<div class="both"></div>
+
+			<table>
+				<thead>
+					<tr>
+						<td>Input Samples</td>
+						<td>Output Samples</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="division">
+							<p>4<br />
+Abcd<br />
+zbcd<br />
+zBce<br />
+abzd</p>
+
+						</td>
+						<td>
+							<p>Abcd<br />
+abzd<br />
+zbcd<br />
+zBce</p>
+
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		<div class="both"></div>
+
+			<table>
+				<thead>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="division">
+								<p>5<br />
+Abc<br />
+abc<br />
+xyz<br />
+xYz<br />
+zzz</p>
+
+						</td>
+						<td>
+							<p>Abc<br />
+abc<br />
+xYz<br />
+xyz<br />
+zzz</p>
+
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="footer">
+				
+			</p>
+		</div>
+	</body>
+</html>

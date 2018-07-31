@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>URI F - Anagrams</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="author" content="URI Online Judge; www.urionlinejudge.edu.br" />
+		<meta name="description" content="URI Online Judge - Problem F - Anagrams" />
+
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="https://urionlinejudge.r.worldssl.net/repository/contest.css" />
+		<script type="text/javascript" src="https://urionlinejudge.r.worldssl.net/judge/js/math-jax/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+	</head>
+	<body>
+		<div class="header">
+			<span>URI Online Judge | F</span>
+			<h1>Anagrams</h1>
+			<div>
+				<p>By Emilio Wuerges, UFFS <img src='https://urionlinejudge.r.worldssl.net/gallery/images/flags/br.gif' alt='BR' /> Brazil</p>
+			</div>
+			<strong>Timelimit: 1</strong>
+		</div>
+
+		<div class="problem">
+
+			<div class="description">
+				<p>An anagram is a permutation of the letters in a word.<br />
+For instance, the strings <strong>ananab</strong> and <strong>anbana</strong> are anagrams of the word <strong>banana</strong>.</p>
+
+<p>Your task, in this problem, is to compute how many distinct anagrams exist for a given word.</p>
+
+<p>Since this number can be very large, compute the remainer of the division of the number of anagrams by our favorite prime number: <span class="math-tex">\(10^9+7\).</p>
+			</div>
+			<h2>Input</h2>
+
+			<div class="input">
+				<p>The input has a single line, with a single word, with at most <span class="math-tex">\(10^5\) characters. The word only has lowercase characters from <strong>a</strong> to <strong>z</strong>.</p>
+			</div>
+
+			<h2>Output</h2>
+
+			<div class="output">
+				<p>The output contains only a sigle line with a single integer, the result.</p>
+			</div>
+
+			<div class="both"></div>
+
+			<table>
+				<thead>
+					<tr>
+						<td>Input Samples</td>
+						<td>Output Samples</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="division">
+							<p>aaa</p>
+
+						</td>
+						<td>
+							<p>1</p>
+
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		<div class="both"></div>
+
+    <table>
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="division">
+                    <p>abc</p>
+
+                </td>
+                <td>
+                    <p>6</p>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="both"></div>
+
+    <table>
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="division">
+                    <p>aab</p>
+
+                </td>
+                <td>
+                    <p>3</p>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+			<p class="footer">
+				
+			</p>
+		</div>
+	</body>
+</html>

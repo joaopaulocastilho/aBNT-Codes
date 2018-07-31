@@ -1,0 +1,2 @@
+le duas palavras
+escreve as duas de volta, mas a menor lexicograficamente primeiro

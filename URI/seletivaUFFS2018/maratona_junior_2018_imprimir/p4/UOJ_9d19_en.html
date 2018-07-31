@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>URI D - Lexical</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="author" content="URI Online Judge; www.urionlinejudge.edu.br" />
+		<meta name="description" content="URI Online Judge - Problem D - Lexical" />
+
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="https://urionlinejudge.r.worldssl.net/repository/contest.css" />
+		
+	</head>
+	<body>
+		<div class="header">
+			<span>URI Online Judge | D</span>
+			<h1>Lexical</h1>
+			<div>
+				<p>By Emilio Wuerges, UFFS <img src='https://urionlinejudge.r.worldssl.net/gallery/images/flags/br.gif' alt='BR' /> Brazil</p>
+			</div>
+			<strong>Timelimit: 1</strong>
+		</div>
+
+		<div class="problem">
+
+			<div class="description">
+				<p>As we know, the lexicon is the set of words in a language. In western languages, it is usual to write using the Latin alphabet, with 26 letters from <strong>a</strong> to <strong>z</strong>.</p>
+
+<p>It is usual to enumerate the Latin letters in the following order: a, b, c, d, e f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z.</p>
+
+<p>If a list of words is sorted using this order, it is much easier to find them. Your job in this problem is to sort 2 words using this ordering.</p>
+
+<p>Given 2 words <strong>A</strong> and <strong>B</strong>. If the first character of A comes before the first character of B, place A before B. If it is the same character, we use the following character to break the tie. If the second is also the same, we use the following, an so on. When all characters from A are equal to the beginning of B, or if all characters of B are equal to the beginning of A, we place the shorter word first.</p>
+			</div>
+			<h2>Input</h2>
+
+			<div class="input">
+				<p>The input contains 2 words using lowercase characters from <strong>a</strong> to <strong>z</strong>. The length of the words is not larger than 20 characters.</p>
+			</div>
+
+			<h2>Output</h2>
+
+			<div class="output">
+				<p>The output contains the same 2 words in lexicographical order.</p>
+			</div>
+
+			<div class="both"></div>
+
+			<table>
+				<thead>
+					<tr>
+						<td>Input Samples</td>
+						<td>Output Samples</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="division">
+							<p>abc<br />
+def</p>
+
+						</td>
+						<td>
+							<p>abc<br />
+def</p>
+
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		<div class="both"></div>
+
+    <table>
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="division">
+                    <p>bcd<br />
+abc</p>
+
+                </td>
+                <td>
+                    <p>abc<br />
+bcd</p>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="both"></div>
+
+    <table>
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="division">
+                    <p>abcd<br />
+abc</p>
+
+                </td>
+                <td>
+                    <p>abc<br />
+abcd</p>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+			<p class="footer">
+				
+			</p>
+		</div>
+	</body>
+</html>

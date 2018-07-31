@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>URI B - Pudim</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="author" content="URI Online Judge; www.urionlinejudge.edu.br" />
+		<meta name="description" content="URI Online Judge - Problema B - Pudim" />
+
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="https://urionlinejudge.r.worldssl.net/repository/contest.css" />
+		<script type="text/javascript" src="https://urionlinejudge.r.worldssl.net/judge/js/math-jax/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+	</head>
+	<body>
+		<div class="header">
+			<span>URI Online Judge | B</span>
+			<h1>Pudim</h1>
+			<div>
+				<p>By Emilio Wuerges, UFFS <img src='https://urionlinejudge.r.worldssl.net/gallery/images/flags/br.gif' alt='BR' /> Brazil</p>
+			</div>
+			<strong>Timelimit: 1</strong>
+		</div>
+
+		<div class="problem">
+
+			<div class="description">
+				<p>The worldly famous website pudim.com.br will soon launch its search engine.
+        The main thing about this search engine is that it will rank articles according to user searches.</p>
+        <p>It is almost done. The only thing missing is the ranking algorithm.</p>
+        <p>After a lot of thought, it was decideded that articles will be graded using the size of the largest common substring between the search and article strings.
+        In other words, the size of the largest string that can be formed using only characters that are in both the search and article strings, in the same order.
+        </p>
+			</div>
+			<h2>Input</h2>
+
+			<div class="input">
+        <p>The input consists of two lines, each one with a string. The first line has the search string and the second line has the article.
+        Both strings only have characters from <strong>a</strong> to <strong>z</strong>, without spaces.</p>
+        <p>The size of the strings, be it the search string or the article string, is at most <span class="math-tex">\(5 \times 10^3\)</span> characters.</p>
+			</div>
+
+			<h2>Output</h2>
+
+			<div class="output">
+        <p>The output contains only a single line withan integer: the grade for the article.</p>
+			</div>
+
+			<div class="both"></div>
+
+			<table>
+				<thead>
+					<tr>
+						<td>Input Samples</td>
+						<td>Output Samples</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="division">
+              <p>pudim<br />
+              phudim</p>
+
+
+            </td>
+            <td>
+              <p>5</p>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="both"></div>
+
+      <table>
+        <thead>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="division">
+                  <p>Pudim<br />
+                  pudim</p>
+            </td>
+            <td>
+              <p>4</p>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="both"></div>
+
+      <table>
+        <thead>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="division">
+                  <p>axbxc<br />
+                  zazbzcz</p>
+                </td>
+                <td>
+                    <p>3</p>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+			<p class="footer">
+				
+			</p>
+		</div>
+	</body>
+</html>

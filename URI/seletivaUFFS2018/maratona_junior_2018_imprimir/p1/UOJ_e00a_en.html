@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>URI A - Eearliest Deadline First</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="author" content="URI Online Judge; www.urionlinejudge.edu.br" />
+		<meta name="description" content="URI Online Judge - Problem A - Eearliest Deadline First" />
+
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="https://urionlinejudge.r.worldssl.net/repository/contest.css" />
+		<script type="text/javascript" src="https://urionlinejudge.r.worldssl.net/judge/js/math-jax/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+	</head>
+	<body>
+		<div class="header">
+			<span>URI Online Judge | A</span>
+			<h1>Eearliest Deadline First</h1>
+			<div>
+				<p>By Emilio Wuerges, UFFS <img src='https://urionlinejudge.r.worldssl.net/gallery/images/flags/br.gif' alt='BR' /> Brazil</p>
+			</div>
+			<strong>Timelimit: 1</strong>
+		</div>
+
+		<div class="problem">
+
+			<div class="description">
+				<p>Your job for this problem is to check if it is possible to schedule a set of periodic tasks under real-time constraints.</p>
+
+<p>A real-time task is defined by two numbers. The first number is the computational cost of the task. It is the computational cost of each complete run of the task. The second number is the period of the process. In other words, the process restarts again after each period.</p>
+
+<p>The task set will be scheduled using the EDF algorithm (Earliest Deadline First). It is known that EDF is optimal. This means that if a set of tasks cannot be scheduled by EDF, there isn't another algorithm that can schedule it.</p>
+
+<p>The operating system that will run these tasks runs on a single core machine. The tasks are preemptable. That is, a task can take the place of another task during its run, if required.</p>
+
+<p>Consider that the cost of switching tasks is 0.</p>
+			</div>
+			<h2>Input</h2>
+
+			<div class="input">
+				<p>The first line of the input has a value&nbsp; <span class="math-tex">\(1 \leq N \leq 10\), which states the number of processes under schedule.</p>
+
+<p>Every N following line represents a process, and has 2 values <span class="math-tex">\(1 \leq C \leq 5\) and <span class="math-tex">\(C \leq P \leq 100\), that represent the computational cost and the period of each process, respectively.</p>
+			</div>
+
+			<h2>Output</h2>
+
+			<div class="output">
+				<p>The output consists of a single line, with the string <strong>OK</strong> or the string <strong>FAIL</strong>, if the scheduling is possible or not, respectively.</p>
+			</div>
+
+			<div class="both"></div>
+
+			<table>
+				<thead>
+					<tr>
+						<td>Input Samples</td>
+						<td>Output Samples</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="division">
+							<p>2<br />
+3 5<br />
+2 5</p>
+
+						</td>
+						<td>
+							<p>OK</p>
+
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		<div class="both"></div>
+
+    <table>
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="division">
+                    <p>4<br />
+1 5<br />
+4 9<br />
+5 15<br />
+2 45</p>
+
+                </td>
+                <td>
+                    <p>FAIL</p>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="both"></div>
+
+    <table>
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="division">
+                    <p>4<br />
+1 5<br />
+4 9<br />
+5 15<br />
+1 45</p>
+
+                </td>
+                <td>
+                    <p>OK</p>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+			<p class="footer">
+				
+			</p>
+		</div>
+	</body>
+</html>

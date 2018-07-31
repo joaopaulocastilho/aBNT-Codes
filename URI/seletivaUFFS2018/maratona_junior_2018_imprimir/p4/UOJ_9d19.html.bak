@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>URI D - Léxico</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="author" content="URI Online Judge; www.urionlinejudge.edu.br" />
+		<meta name="description" content="URI Online Judge - Problema D - Léxico" />
+
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="https://urionlinejudge.r.worldssl.net/repository/contest.css" />
+		
+	</head>
+	<body>
+		<div class="header">
+			<span>URI Online Judge | D</span>
+			<h1>Léxico</h1>
+			<div>
+				<p>Por Emilio Wuerges, UFFS <img src='https://urionlinejudge.r.worldssl.net/gallery/images/flags/br.gif' alt='BR' /> Brazil</p>
+			</div>
+			<strong>Timelimit: 1</strong>
+		</div>
+
+		<div class="problem">
+
+			<div class="description">
+				<p>Como se sabe, léxico é o conjunto de palavras que existe em uma língua. Nas línguas ocidentais, é comum escrever usando o alfabeto latino, com 26 letras que vão de <strong>a</strong> até <strong>z</strong>.</p>
+
+<p>É comum enumerar as letras na seguinte ordem: a, b, c, d, e f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z.</p>
+
+<p>Se uma lista de palavras está organizadas de acordo com esta ordem, fica muito mais rápido pesquisá-las. Seu trabalho neste problema é ordenar duas palavras de acordo com esta ordem.</p>
+
+<p>Sejam duas palavras <strong>A</strong> e <strong>B</strong>. Caso o primeiro caracter de A venha antes do primeiro de B, coloca-se A antes de B. Se o primeiro caracter for igual, usa-se o seguinte para desempate. E se o segundo empatar, usa-se o terceiro, etc. Quando todos os caracteres de A forem iguais ao começo de B, ou todos os de B forem iguais ao começo de A, coloca-se a menor palavra primeiro.</p>
+
+<p>&nbsp;</p>
+			</div>
+			<h2>Entrada</h2>
+
+			<div class="input">
+				<p>A entrada contém 2 palavras com carateres minúsculos de <strong>a</strong> até <strong>z</strong>, O comprimeinto das palavras não ultrapassa 20 caracteres.</p>
+			</div>
+
+			<h2>Saída</h2>
+
+			<div class="output">
+				<p>A saída contém as mesmas 2 palavras, só que na ordem lexicográfica.</p>
+			</div>
+
+			<div class="both"></div>
+
+			<table>
+				<thead>
+					<tr>
+						<td>Exemplos de Entrada</td>
+						<td>Exemplos de Saída</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="division">
+							<p>abc<br />
+def</p>
+
+						</td>
+						<td>
+							<p>abc<br />
+def</p>
+
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		<div class="both"></div>
+
+    <table>
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="division">
+                    <p>bcd<br />
+abc</p>
+
+                </td>
+                <td>
+                    <p>abc<br />
+bcd</p>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="both"></div>
+
+    <table>
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="division">
+                    <p>abcd<br />
+abc</p>
+
+                </td>
+                <td>
+                    <p>abc<br />
+abcd</p>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+			<p class="footer">
+				
+			</p>
+		</div>
+	</body>
+</html>

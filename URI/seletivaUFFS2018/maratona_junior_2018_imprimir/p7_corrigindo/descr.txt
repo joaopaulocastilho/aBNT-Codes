@@ -1,0 +1,4 @@
+primeira linha inteiro tamanho do dicionario
+recebe o dicionario com 1 palavra pro linha, com maiusculas ou minusculas
+ordena lexicograficamente as palavras
+escreve as palavras do dicionario, com a grafia original

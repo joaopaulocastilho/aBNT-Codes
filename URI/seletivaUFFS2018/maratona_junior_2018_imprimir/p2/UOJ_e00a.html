@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>URI B - Pudim</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="author" content="URI Online Judge; www.urionlinejudge.edu.br" />
+		<meta name="description" content="URI Online Judge - Problema B - Pudim" />
+
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="https://urionlinejudge.r.worldssl.net/repository/contest.css" />
+		<script type="text/javascript" src="https://urionlinejudge.r.worldssl.net/judge/js/math-jax/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+	</head>
+	<body>
+		<div class="header">
+			<span>URI Online Judge | B</span>
+			<h1>Pudim</h1>
+			<div>
+				<p>Por Emilio Wuerges, UFFS <img src='https://urionlinejudge.r.worldssl.net/gallery/images/flags/br.gif' alt='BR' /> Brazil</p>
+			</div>
+			<strong>Timelimit: 1</strong>
+		</div>
+
+		<div class="problem">
+
+			<div class="description">
+        <p>O famosíssimo portal pudim.com.br está criando um novo motor de busca na internet. O principal diferencial deste motor de busca é que ele fará as buscas a partir de um rank dos artigos, de acordo com as pesquisas feitas pelos usuários.</p>
+        <p>Está quase tudo pronto. Falta apenas o algoritmo de rankeamento.</p>
+        <p>Após muita discussão, se resolveu usar como nota para o rankeamento o tamanho da maior string comum entre os strings de busca e os strings contendo os artigos. 
+        Isto é, tenta-se calcular o tamanho da maior string que pode ser formada que contêm apenas caracteres que estejam tanto no string de busca quanto no string do artigo, na mesma ordem.
+        </p>
+
+			</div>
+			<h2>Entrada</h2>
+
+			<div class="input">
+				<p>A entrada contêm duas linhas, cada uma com um string. Na primeira linha está o string da busca, na segunda o do artigo.
+        Ambos os strings contêm apenas caracteres de <strong>a</strong> a <strong>z</strong>, sem espaços.</p>
+        <p>O tamanho das strings tanto de busca quanto do artigo são de no máximo <span class="math-tex">\(5 \times 10^3\)</span> caracteres</p>
+			</div>
+
+			<h2>Saída</h2>
+
+			<div class="output">
+				<p>A saída contém apenas uma linha com um inteiro: a nota do artigo.</p>
+			</div>
+
+			<div class="both"></div>
+
+			<table>
+				<thead>
+					<tr>
+						<td>Exemplos de Entrada</td>
+						<td>Exemplos de Saída</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="division">
+              <p>pudim<br />
+              phudim</p>
+
+
+						</td>
+						<td>
+							<p>5</p>
+
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		<div class="both"></div>
+
+    <table>
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="division">
+                  <p>Pudim<br />
+                  pudim</p>
+
+                </td>
+                <td>
+                    <p>4</p>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="both"></div>
+
+    <table>
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="division">
+                  <p>axbxc<br />
+                  zazbzcz</p>
+                </td>
+                <td>
+                    <p>3</p>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+			<p class="footer">
+				
+			</p>
+		</div>
+	</body>
+</html>
