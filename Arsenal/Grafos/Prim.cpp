@@ -1,3 +1,5 @@
+/* Devolve peso da MST de um grafo em uma lista de adjacências. */
+
 #include<stdio.h>
 #include<string.h>
 #include<vector>
