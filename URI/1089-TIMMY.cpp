@@ -1,8 +1,16 @@
 #include <stdio.h>
 #include <string.h>
 
+int NC;
+
+int valido(int i){
+  if(i == -1) return NC-1;
+  if(i == NC) return 0;
+  return i;
+}
+
 int main(void){
-    int v[11234], i, count, NC;
+    int v[11234], i, count;
 
     scanf("%d", &NC);
     while(NC != 0){
@@ -12,13 +20,9 @@ int main(void){
             scanf("%d", &v[i]);
         }
         for(i = 0; i < NC; i++){
-            if(i == 0){
-                if((v[NC-1] > v[i] && v[i] < v[i+1]) || (v[NC-1] < v[i] && v[i] > v[i+1])) count++;
-            }
-            else if(i == (NC-1)){
-                if((v[i-1] > v[i] && v[i] < v[0]) || (v[i-1] < v[i] && v[i] > v[0])) count++;
-            }
-            else if((v[i-1] < v[i] && v[i] > v[i+1]) || (v[i-1] > v[i] && v[i] < v[i+1])) count++;
+	  if(((v[valido(i-1)]) > v[i] && v[i] < v[valido(i+1)]) ||
+	     (v[valido(i-1)] < v[i] && v[i] > v[valido(i+1)]))
+	    count++;
         }
         printf("%d\n", count);
         scanf("%d", &NC);
