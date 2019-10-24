@@ -1,2 +1,2 @@
 # aBNT-Codes
-Códigos do Time aBNT Tigers :).
+Repositório de Códigos do Time aBNT Tigers :).
